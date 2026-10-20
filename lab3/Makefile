@@ -4,8 +4,8 @@ LDLIBS = -lm -pthread
 
 all: main
 
-main: main.c monte_carlo.c monte_carlo.h
-	$(CC) $(CFLAGS) main.c monte_carlo.c -o main $(LDLIBS)
+main: src/main.c src/monte_carlo.c src/monte_carlo.h
+	$(CC) $(CFLAGS) src/main.c src/monte_carlo.c -o main $(LDLIBS)
 
 clean:
 	rm -f main
