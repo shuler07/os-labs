@@ -5,9 +5,9 @@ LDLIBS = -lm -pthread
 all: main
 
 main: main.c monte_carlo.c monte_carlo.h
-	$(CC) $(CFLAGS) main.c monte_carlo.c -o main.exe $(LDLIBS)
+	$(CC) $(CFLAGS) main.c monte_carlo.c -o main $(LDLIBS)
 
 clean:
-	rm -f *.exe
+	rm -f main
 
 .PHONY: all clean
