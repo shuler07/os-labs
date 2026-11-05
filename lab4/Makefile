@@ -5,12 +5,12 @@ LDLIBS = -pthread
 all: parent.exe child.exe
 
 parent.exe: parent.c shared.c shared.h
-	$(CC) $(CFLAGS) parent.c shared.c -o parent.exe $(LDLIBS)
+	$(CC) $(CFLAGS) parent.c shared.c -o parent $(LDLIBS)
 
 child.exe: child.c shared.c shared.h
-	$(CC) $(CFLAGS) child.c shared.c -o child.exe $(LDLIBS)
+	$(CC) $(CFLAGS) child.c shared.c -o child $(LDLIBS)
 
 clean:
-	rm -f *.exe
+	rm -f parent child
 
 .PHONY: all clean
