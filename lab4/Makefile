@@ -4,11 +4,11 @@ LDLIBS = -pthread
 
 all: parent.exe child.exe
 
-parent.exe: parent.c shared.c shared.h
-	$(CC) $(CFLAGS) parent.c shared.c -o parent $(LDLIBS)
+parent.exe: src/parent.c src/shared.c src/shared.h
+	$(CC) $(CFLAGS) src/parent.c src/shared.c -o parent $(LDLIBS)
 
-child.exe: child.c shared.c shared.h
-	$(CC) $(CFLAGS) child.c shared.c -o child $(LDLIBS)
+child.exe: src/child.c src/shared.c src/shared.h
+	$(CC) $(CFLAGS) src/child.c src/shared.c -o child $(LDLIBS)
 
 clean:
 	rm -f parent child
