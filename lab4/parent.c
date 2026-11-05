@@ -73,7 +73,7 @@ int main() {
     if (pid == 0) {
         char descriptor_string[32];
         snprintf(descriptor_string, sizeof(descriptor_string), "%d", descriptor);
-        execl("./child.exe", "child.exe", descriptor_string, filename, (char *)NULL);
+        execl("./child", "child", descriptor_string, filename, (char *)NULL);
         perror("execl");
         _exit(1);
     }
